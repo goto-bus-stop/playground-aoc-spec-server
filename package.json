@@ -1,0 +1,29 @@
+{
+  "name": "playground-aoc-spec-server",
+  "description": "connecting to an aoc spectator server",
+  "version": "0.0.0",
+  "author": "Renée Kooi <renee@kooi.me>",
+  "bugs": {
+    "url": "https://github.com/goto-bus-stop/playground-aoc-spec-server/issues"
+  },
+  "devDependencies": {
+    "standard": "^11.0.0",
+    "tap-spec": "^5.0.0",
+    "tape": "^4.0.0"
+  },
+  "homepage": "https://github.com/goto-bus-stop/playground-aoc-spec-server",
+  "keywords": [],
+  "license": "Apache-2.0",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/goto-bus-stop/playground-aoc-spec-server.git"
+  },
+  "scripts": {
+    "test": "standard && node test | tap-spec"
+  },
+  "dependencies": {
+    "awestruct": "^1.1.2",
+    "minimist": "^1.2.0"
+  }
+}
