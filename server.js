@@ -28,7 +28,7 @@ let isFirst = false
 // keep packets in memory for late join
 const buffers = []
 const clients = new Set()
-const socket = net.createConnection(53754, '192.168.178.116', () => {
+const socket = net.createConnection(53754, host, () => {
   console.log('connected to spec server')
 
   socket.on('data', (packet) => {

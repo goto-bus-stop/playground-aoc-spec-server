@@ -25,13 +25,13 @@ First start a UserPatch game that allows spectators (Sx button in the game setup
 then do:
 ```bash
 # provide the host IP that's runnning a spectatable game
-node index 192.168.178.116
+node server 192.168.178.116
 ```
 
 Then you can spec using
 ```bash
 # provide IP of the box running the spec relay server
-wine Age2_x1/spectate.exe 192.168.178.112
+node client ~/path/to/Age2_x1.5.exe 192.168.178.112
 ```
 
 ## License
