@@ -34,7 +34,7 @@ const SpecHeader = struct([
 const socket = net.createConnection(53754, host, () => {
   socket.once('data', (packet) => {
     const header = SpecHeader(packet)
-    const mgx = path.join(path.dirname(aoc), `../SaveGame/spec.${header.fileType}`)
+    const mgx = path.join(path.dirname(aoc), `../SaveGame/spc.0.${header.playerName}.${header.fileType}`)
 
     console.log('spec file:', mgx)
     socket.pipe(fs.createWriteStream(mgx))
@@ -47,18 +47,18 @@ const socket = net.createConnection(53754, host, () => {
         current += header.length
         if (current >= len) {
           socket.off('data', ondata)
-          start(mgx)
+          start(header.gameName, mgx)
         }
       })
     })
   })
 })
 
-function start (mgx) {
+function start (game, mgx) {
   console.log('starting game')
   const recpath = spawnSync('winepath', ['-w', mgx]).stdout.toString().trim()
   console.log(recpath)
-  spawn('wine', [aoc, recpath], { stdio: 'inherit' }).on('close', () => {
+  spawn('wine', [aoc, `GAME=${game}`, recpath], { stdio: 'inherit' }).on('close', () => {
     console.log('done')
   })
 }

@@ -8,7 +8,11 @@ This could quite easily be adapted into a relay that supports many spectators (m
 
 This example supports joining at any point after the game has started, regardless of the late join configuration in UP itself.
 
-[More](#more) - [Usage](#usage) - [License: Apache-2.0](#license)
+[Remaining Questions](#remaining-questions) - [More](#more) - [Usage](#usage) - [License: Apache-2.0](#license)
+
+## Remaining Questions
+
+The spec client doesn't work the same as UP's spectate.exe. When reading to the end of a rec file, spectate.exe waits for more data, but with client.js the game ends.
 
 ## More
 
